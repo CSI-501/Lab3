@@ -41,7 +41,7 @@ function Determinant(M, n) result(Det)
    ! Define the variable types
    real :: Det
    integer :: n
-   real, allocatable :: M(:,:)
+   real :: M(n,n)
 
    ! Perform determinant for 2x2 matrix.
    if ( n == 2 ) then
@@ -52,8 +52,6 @@ function Determinant(M, n) result(Det)
       Det = (M(1,1) * M(2,2) * M(3,3)) + (M(1,2) * M(2,3) * M(3,1)) + (M(1,3) * M(2,1) * M(3,2)) &
       - (M(1,3) * M(2,2) * M(3,1)) - (M(1,2) * M(2,1) * M(3,3)) - (M(1,1) * M(2,3) * M(3,2))
    end if
-   ! Write this function so that it can compute the determinant of a 2x2 or
-   ! 3x3 matric depending on the value of n.
 
       
 end function Determinant
